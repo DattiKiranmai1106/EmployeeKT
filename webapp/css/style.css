@@ -1,0 +1,38 @@
+/* Enter your custom styles here */
+.TB1{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.img {
+    margin-left: 60% !important; 
+} 
+
+.tit{
+    color:darkred;
+}
+.butclsTable{
+    margin-left: 65% !important;
+    border-color: #ccc !important;
+}
+
+.tit1{
+    font-size: larger;
+    font-weight: bold !important;
+}
+.TBClass3{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.butt1{
+    margin-left: 210px;
+}
+.butt2{
+    margin-left: 7px;
+}
+.tool2{
+    margin-top: 25px;
+}

@@ -1,0 +1,41 @@
+<core:FragmentDefinition
+	xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+>
+	<Dialog
+		title="{i18n>title35}">
+    <f:SimpleForm
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"                       
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="{i18n>title20}" />
+				<Input id="idSNo" value="{oValidationModel>/SNo}" valueState="{oValidationModel>/valueStateSno}" valueStateText="{oValidationModel>/ValueStateTextSno}" liveChange="onLiveChangeValue" required="true" />
+				<Label text="{i18n>title21}" />
+				<Input id="idDegree" change="onChangeValue" value="{oValidationModel>/TypeOfDegree}" valueState="{oValidationModel>/valueStateDegree}" valueStateText="{oValidationModel>/ValueStateTextDegree}" required="true">
+				</Input>
+				<Label text="{i18n>title22}" />
+				<Input id="idBranch"  change="onChangeValue" value="{oValidationModel>/Branch}" valueState="{oValidationModel>/valueStateBranch}" valueStateText="{oValidationModel>/ValueStateTextBranch}"  />
+                <Label text="{i18n>title23}" />
+				<Input id="idYear" type="Number"   value="{oValidationModel>/PassOutYear}" valueState="{oValidationModel>/valueStateYear}" valueStateText="{oValidationModel>/ValueStateTextYear}"  required="true" />
+                <Label text="{i18n>title24}" />
+				<Input id="idPer"  value="{oValidationModel>/Percentage}" valueState="{oValidationModel>/valueStatePer}" valueStateText="{oValidationModel>/ValueStateTextPer}"  required="true" />
+			</f:content>
+		</f:SimpleForm>
+        <Button class="butt1" text="{i18n>title32}" press="onPressSave"  />
+        <Button class="butt2" text="{i18n>title33}" press="onPressClose"/>
+	</Dialog>
+</core:FragmentDefinition>

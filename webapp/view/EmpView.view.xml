@@ -1,0 +1,168 @@
+<mvc:View controllerName="com.sap.kt.employeeonboard.employeekt.controller.EmpView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form" >
+    <Page id="page" title="{i18n>title}" showHeader="false">
+        <content>
+        <Toolbar id="TB1" class="TB1">
+			<Title text="{i18n>title1}" class="tit" />
+            <Image class="img" src="../image/KT_Logo (3).png" width="250px" height="50px"/>
+            
+		</Toolbar>
+        <IconTabBar
+		id="idIconTabBar"
+		select=".onFilterSelect"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				icon="sap-icon://begin"
+				iconColor="Positive"
+				design="Horizontal"
+				text="{i18n>title2}"
+				key="Ok">
+                <f:SimpleForm id="SimpleFormChangeColumn_oneGroup"
+			                editable="true"
+			                layout="ColumnLayout" >
+                        <f:toolbar>
+				        <Toolbar id="TB2">
+					        <Title id="Title1" text="{i18n>title3}"/>
+				        </Toolbar>
+			            </f:toolbar>
+				        <f:content>
+				           <Label text="{i18n>title4}" />
+                           <Input id="idInputFirst" value="{firstName}" required="true"/>
+				           <Label text="{i18n>title5}" />
+				           <Input id="idInputLast" value="{lastName}" required="true"/>
+                           <Label text="{i18n>title6}" />
+				           <Input id="idEmailInput" value="{email}" type="Email" required="true"/>
+                           <Label text="{i18n>title7}" />
+				           <Input id="idPhoneNo" value="{phoneno}" required="true" change="onChangeValue" maxLength="13" />
+                           <Label text="{i18n>title8}"  />
+                           	<RadioButtonGroup id="rbg3" columns="3"   >
+			                    <RadioButton id="RB3-1" text="{i18n>title9}" />
+			                    <RadioButton id="RB3-2" text="{i18n>title10}" />
+			                    <RadioButton id="RB3-3" text="{i18n>title11}" />
+		                    </RadioButtonGroup>
+                           <Label text="{i18n>title12}" />
+                            <Input id="dateValue" change="onDateChange" type="Date" />
+							<Input id="ageInput" value="Age"/>
+                           <Label text="{i18n>title13}" />
+				           <TextArea id="idText" valueState="Information" placeholder="{i18n>title34}" height="45px" required="true" />
+                           <Label text="{i18n>title14}" />
+                           <ComboBox id="idCountry"
+				               showSecondaryValues= "true"
+			                   items="{
+					           path: 'oCountryModel>/country'}">
+				               <core:ListItem key="{oCountryModel>key}" text="{oCountryModel>des}" additionalText = "{oCountryModel>key}"/>
+			                </ComboBox>
+    
+                           <Label text="{i18n>title15}" />
+                          <Select id="idState" showSecondaryValues= "true" items="{path:'oStateModel>/state'}">
+                           <core:ListItem  key="{oStateModel>key}" text="{oStateModel>sdes}" additionalText="{oStateModel>skey}"/>
+					       </Select>
+                           <Label text="{i18n>title16}" />
+				           <Input id="idCity" value="{City}" />
+                           <Label text="{i18n>title17}" />
+				           <Input id="idPincode" value="{pincode}" type="Number" />
+			            </f:content>   	
+		        </f:SimpleForm>
+                <Toolbar id="TB3" class="TBClass3">
+			        <Title text="{i18n>title18}" class="tit1" />
+                    <Button text="{i18n>title19}" press="onPress" class="butclsTable" />
+                </Toolbar>
+                <Table id="idStudentTable" alternateRowColors="false" items="{path:'studentmodel>/'}" mode="Delete" delete="onPressDelete"  >
+		            <columns >
+			            <Column  >
+			            	<Text text="{i18n>title20}" />
+			            </Column>
+			            <Column>
+			            	<Text text="{i18n>title21}" />
+			            </Column>
+			            <Column>
+			            	<Text text="{i18n>title22}" />
+			            </Column>
+			            <Column >
+			            	<Text text="{i18n>title23}" />
+			            </Column>
+			            <Column>
+			            	<Text text="{i18n>title24}" />
+			            </Column>
+		            </columns>
+                    <items>
+                        <ColumnListItem id="colId"  class="cell" press="">
+                            <cells class="fun">
+                               <Text text="{studentmodel>SNo}"  />
+                               <Text text="{studentmodel>TypeOfDegree}"  />
+                               <Text text="{studentmodel>Branch}"  />
+                               <Text text="{studentmodel>PassOutYear}"  />
+                               <Text text="{studentmodel>Percentage_CGPA}"  />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                  </Table> 
+				 <f:SimpleForm 
+			        id="SimpleFormToolbar"
+			        editable="true"
+			        layout="ResponsiveGridLayout"
+			        labelSpanXL="4"
+			        labelSpanL="3"
+			        labelSpanM="4"
+			        labelSpanS="12"
+			        adjustLabelSpan="false"
+			        emptySpanXL="0"
+			        emptySpanL="4"
+			        emptySpanM="0"
+			        emptySpanS="0"
+			        columnsXL="2"
+			        columnsL="1"
+			        columnsM="1"
+			        singleContainerFullSize="false"
+			        ariaLabelledBy="Title1"  >
+                        <f:toolbar>
+				        <Toolbar id="TB4" class="tool2">
+					        <Title  text="{i18n>title36}"/>
+				        </Toolbar>
+			            </f:toolbar>
+				        <f:content>
+				           <Label text="{i18n>title37}" />
+                           <Input id="idLogin"  value="{LoginName}" required="true"/>
+				           <Label text="{i18n>title38}" />
+				           <Input id="idPassword" type="Password"  value="{Password}" required="true"/>
+			            </f:content>   	
+		        </f:SimpleForm>
+            </IconTabFilter>
+			<IconTabFilter
+				icon="sap-icon://attachment"
+				iconColor="Critical"
+				design="Horizontal"
+				text="{i18n>title25}"
+				key="Heavy" >
+               <f:SimpleForm id="SimpleFormChangeColumn_oneGroup1"
+		  	                editable="true"
+			                layout="ColumnLayout" >
+			                <f:content>
+				                <Label text="{i18n>title26}"/>
+			                    <u:FileUploader  placeholder="Choose a file for Upload..."> </u:FileUploader>
+                                <Label text="{i18n>title27}"/>
+			                    <u:FileUploader  placeholder="Choose a file for Upload..."> </u:FileUploader>
+                                <Label text="{i18n>title28}"/>
+			                    <u:FileUploader  placeholder="Choose a file for Upload..."> </u:FileUploader>
+                                <Label text="{i18n>title29}"/>
+			                    <u:FileUploader  placeholder="Choose a file for Upload..."> </u:FileUploader>
+                                <Label text="{i18n>title30}"/>
+			                    <u:FileUploader  placeholder="Choose a file for Upload..."> </u:FileUploader>
+                                <Label text="{i18n>title31}"/>
+			                    <u:FileUploader  placeholder="Choose a file for Upload..."> </u:FileUploader>   
+		                	</f:content>
+		       </f:SimpleForm>
+            </IconTabFilter>
+		</items>
+        </IconTabBar>
+        </content>
+         <footer>
+			<OverflowToolbar id="otbFooter">
+			 <ToolbarSpacer/>
+				    <Button press="onAccept"  text="{i18n>title32}" type="Accept" width="100px"/>
+			</OverflowToolbar>
+		</footer>
+    </Page>
+</mvc:View>
